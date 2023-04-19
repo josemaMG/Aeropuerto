@@ -23,7 +23,7 @@ public class Aeropuerto {
 	}
 
 	public String toString() {
-		return "Aeropuerto [vuelos=" + vuelos + "]";
+		return "Aeropuerto [vuelos=" + vuelos.size() + "]";
 	}
 	
 	public void añadirVuelo(Vuelo v) {

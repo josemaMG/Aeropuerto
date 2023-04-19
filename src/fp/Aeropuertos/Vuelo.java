@@ -5,7 +5,7 @@ import java.time.LocalTime;
 import java.time.temporal.ChronoUnit;
 import java.util.Objects;
 
-public class Vuelo {
+public class Vuelo implements Comparable<Vuelo> {
 		private LocalDate fecha;
 		private LocalTime horaPlanificada;
 		private String codigo, ciudad, codigoAeropuerto, companya, modelo, id;
@@ -103,5 +103,17 @@ public class Vuelo {
 			}
 			return result;
 		}
+
+		public int compareTo(Vuelo o) {
+			int result=fecha.compareTo(o.fecha);
+			if (result==0) {
+				result=horaPlanificada.compareTo(o.horaPlanificada);
+				if (result==0) {
+					result=codigo.compareTo(o.codigo);
+				}
+			}
+			return result;
+		}
+
 		
 }
