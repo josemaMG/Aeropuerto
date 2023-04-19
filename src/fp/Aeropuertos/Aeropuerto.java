@@ -87,6 +87,8 @@ public class Aeropuerto {
 		return vuelos.stream().filter(e->e.getDiferenciaMinutos().equals(limite)).sorted().toList().get(0);
 	}
 	
-	
+	public Vuelo getVueloMasTempranoDestino(String ciudad) {
+		return vuelos.stream().filter(e->e.getCiudad().equals(ciudad) && e.getDiferenciaMinutos()>0);
+	}
 	
 }
